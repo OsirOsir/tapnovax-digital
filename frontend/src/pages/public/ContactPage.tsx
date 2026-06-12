@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle, Loader, Clock, Hash, Building2 } from 'lucide-react';
 import { submitInquiry } from '../../api/inquiries';
 
 export default function ContactPage() {
@@ -145,16 +144,10 @@ export default function ContactPage() {
                 </h3>
                 <div className="text-sm text-gray-500 space-y-1.5">
                   <div className="flex justify-between">
-                    <span>KRA PIN</span>
-                    <span className="font-medium text-gray-700">A007418199N</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>ID Number</span>
-                    <span className="font-medium text-gray-700">6798555</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>ID Type</span>
-                    <span className="font-medium text-gray-700">Kenyan Citizen</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Designation</span>

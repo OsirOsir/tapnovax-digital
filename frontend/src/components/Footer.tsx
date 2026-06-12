@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Building2, Hash } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -15,22 +15,12 @@ export default function Footer() {
               </div>
               <span className="font-semibold text-white text-base">Tapnovax Digital</span>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed max-w-sm mb-5">
+            <p className="text-white/50 text-sm leading-relaxed max-w-sm mb-4">
               Provision of Digital Services, Online Marketing, Sales Support, Customer Onboarding, Business Promotion, and Related Technology-enabled Services.
             </p>
-            <div className="space-y-2 text-xs text-white/30">
-              <div className="flex items-center gap-2">
-                <Hash size={12} />
-                <span>KRA PIN: A007418199N</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Building2 size={12} />
-                <span>ID No: 6798555 &nbsp;|&nbsp; Proprietor &nbsp;|&nbsp; Kenyan Citizen</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span>Occupation: Digital Services Provider</span>
-              </div>
-            </div>
+            <p className="text-white/30 text-xs">
+              Proprietor &nbsp;|&nbsp; Kenyan Citizen &nbsp;|&nbsp; Digital Services Provider
+            </p>
           </div>
 
           {/* Navigation */}
@@ -49,9 +39,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-white/50">
               <div className="flex items-start gap-2">
                 <Mail size={14} className="mt-0.5 shrink-0" />
-                <div>
-                  <div>Hellenakaran@gmail.com</div>
-                </div>
+                <span>Hellenakaran@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={14} className="shrink-0" />
