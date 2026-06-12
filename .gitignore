@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.env
+
+# Node
+node_modules/
+dist/
+.env.local
+
+# DB
+*.db
+*.sqlite3
+
+# Migrations (keep structure, ignore versions if needed)
+# backend/migrations/versions/
+
+# OS
+.DS_Store
+*.swp
