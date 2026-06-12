@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Building2, Hash } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="bg-navy-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+          {/* Brand + About */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
@@ -13,10 +15,25 @@ export default function Footer() {
               </div>
               <span className="font-semibold text-white text-base">Tapnovax Digital</span>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/50 text-sm leading-relaxed max-w-sm mb-5">
               Provision of Digital Services, Online Marketing, Sales Support, Customer Onboarding, Business Promotion, and Related Technology-enabled Services.
             </p>
+            <div className="space-y-2 text-xs text-white/30">
+              <div className="flex items-center gap-2">
+                <Hash size={12} />
+                <span>KRA PIN: A007418199N</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Building2 size={12} />
+                <span>ID No: 6798555 &nbsp;|&nbsp; Proprietor &nbsp;|&nbsp; Kenyan Citizen</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>Occupation: Digital Services Provider</span>
+              </div>
+            </div>
           </div>
+
+          {/* Navigation */}
           <div>
             <div className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-4">Navigation</div>
             <div className="space-y-2.5">
@@ -25,17 +42,37 @@ export default function Footer() {
               ))}
             </div>
           </div>
+
+          {/* Contact */}
           <div>
-            <div className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-4">Contact</div>
+            <div className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-4">Contact Us</div>
             <div className="space-y-3 text-sm text-white/50">
-              <div className="flex items-center gap-2"><Mail size={14} /><span>info@tapnovax.com</span></div>
-              <div className="flex items-center gap-2"><Phone size={14} /><span>+254 700 000 000</span></div>
-              <div className="flex items-center gap-2"><MapPin size={14} /><span>Nairobi, Kenya</span></div>
+              <div className="flex items-start gap-2">
+                <Mail size={14} className="mt-0.5 shrink-0" />
+                <div>
+                  <div>Hellenakaran@gmail.com</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={14} className="shrink-0" />
+                <span>+254 769 989 480</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin size={14} className="mt-0.5 shrink-0" />
+                <div>
+                  <div>Madaraka Estate, Mtambo Road</div>
+                  <div>Bamburi, Kisauni</div>
+                  <div>Mombasa — 80101</div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
-        <div className="border-t border-white/10 mt-10 pt-6 text-center text-white/30 text-xs">
-          &copy; {new Date().getFullYear()} Tapnovax Digital. All rights reserved.
+
+        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-white/30 text-xs">
+          <span>&copy; {new Date().getFullYear()} Tapnovax Digital. All rights reserved.</span>
+          <span>P.O. Box 80101 – Bamburi, Mombasa, Kenya</span>
         </div>
       </div>
     </footer>

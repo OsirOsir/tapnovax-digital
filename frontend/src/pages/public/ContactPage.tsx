@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, CheckCircle, Loader } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle, Loader, Clock, Hash, Building2 } from 'lucide-react';
 import { submitInquiry } from '../../api/inquiries';
 
 export default function ContactPage() {
@@ -39,6 +39,8 @@ export default function ContactPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+            {/* Contact Form */}
             <div className="lg:col-span-2">
               {success ? (
                 <div className="card p-10 text-center">
@@ -93,23 +95,78 @@ export default function ContactPage() {
                 </div>
               )}
             </div>
+
+            {/* Sidebar Info */}
             <div className="space-y-6">
+
               <div className="card p-6">
                 <h3 className="font-semibold text-navy-900 mb-4">Contact Information</h3>
                 <div className="space-y-4 text-sm text-gray-600">
-                  <div className="flex items-start gap-3"><Mail size={16} className="text-blue-500 mt-0.5" /><div><div className="font-medium text-gray-800">Email</div><div>info@tapnovax.com</div></div></div>
-                  <div className="flex items-start gap-3"><Phone size={16} className="text-blue-500 mt-0.5" /><div><div className="font-medium text-gray-800">Phone</div><div>+254 700 000 000</div></div></div>
-                  <div className="flex items-start gap-3"><MapPin size={16} className="text-blue-500 mt-0.5" /><div><div className="font-medium text-gray-800">Location</div><div>Nairobi, Kenya</div></div></div>
+                  <div className="flex items-start gap-3">
+                    <Mail size={16} className="text-blue-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium text-gray-800">Email</div>
+                      <div>Hellenakaran@gmail.com</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Phone size={16} className="text-blue-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium text-gray-800">Phone</div>
+                      <div>+254 769 989 480</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin size={16} className="text-blue-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-medium text-gray-800">Physical Address</div>
+                      <div>Madaraka Estate, Mtambo Road</div>
+                      <div>Bamburi, Kisauni District</div>
+                      <div>Mombasa — P.O. Box 80101</div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
               <div className="card p-6">
-                <h3 className="font-semibold text-navy-900 mb-2">Business Hours</h3>
+                <h3 className="font-semibold text-navy-900 mb-3 flex items-center gap-2">
+                  <Clock size={15} className="text-blue-500" /> Business Hours
+                </h3>
                 <div className="text-sm text-gray-500 space-y-1.5">
                   <div className="flex justify-between"><span>Monday – Friday</span><span className="font-medium text-gray-700">8am – 6pm</span></div>
                   <div className="flex justify-between"><span>Saturday</span><span className="font-medium text-gray-700">9am – 2pm</span></div>
                   <div className="flex justify-between"><span>Sunday</span><span className="text-gray-400">Closed</span></div>
                 </div>
               </div>
+
+              <div className="card p-6">
+                <h3 className="font-semibold text-navy-900 mb-3 flex items-center gap-2">
+                  <Building2 size={15} className="text-blue-500" /> Business Registration
+                </h3>
+                <div className="text-sm text-gray-500 space-y-1.5">
+                  <div className="flex justify-between">
+                    <span>KRA PIN</span>
+                    <span className="font-medium text-gray-700">A007418199N</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>ID Number</span>
+                    <span className="font-medium text-gray-700">6798555</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>ID Type</span>
+                    <span className="font-medium text-gray-700">Kenyan Citizen</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Designation</span>
+                    <span className="font-medium text-gray-700">Proprietor</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Occupation</span>
+                    <span className="font-medium text-gray-700 text-right max-w-[140px]">Digital Services Provider</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
