@@ -19,7 +19,6 @@ export default function Footer() {
               Provision of Digital Services, Online Marketing, Sales Support, Customer Onboarding, Business Promotion, and Related Technology-enabled Services.
             </p>
             <p className="text-white/30 text-xs">
-              Proprietor &nbsp;|&nbsp; Kenyan Citizen &nbsp;|&nbsp; Digital Services Provider
             </p>
           </div>
 

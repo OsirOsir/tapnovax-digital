@@ -140,7 +140,6 @@ export default function ContactPage() {
 
               <div className="card p-6">
                 <h3 className="font-semibold text-navy-900 mb-3 flex items-center gap-2">
-                  <Building2 size={15} className="text-blue-500" /> Business Registration
                 </h3>
                 <div className="text-sm text-gray-500 space-y-1.5">
                   <div className="flex justify-between">
@@ -150,12 +149,8 @@ export default function ContactPage() {
                   <div className="flex justify-between">
                   </div>
                   <div className="flex justify-between">
-                    <span>Designation</span>
-                    <span className="font-medium text-gray-700">Proprietor</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Occupation</span>
-                    <span className="font-medium text-gray-700 text-right max-w-[140px]">Digital Services Provider</span>
                   </div>
                 </div>
               </div>
