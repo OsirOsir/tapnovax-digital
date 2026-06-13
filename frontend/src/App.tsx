@@ -7,6 +7,7 @@ import ServicesPage from './pages/public/ServicesPage';
 import ServiceDetailPage from './pages/public/ServiceDetailPage';
 import AboutPage from './pages/public/AboutPage';
 import ContactPage from './pages/public/ContactPage';
+import PricingPage from './pages/public/PricingPage';
 
 // Auth pages
 import LoginPage from './pages/auth/LoginPage';
@@ -55,6 +56,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
           </Route>
 
           {/* Auth */}

@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <div className="text-white/70 text-xs font-semibold uppercase tracking-wider mb-4">Navigation</div>
             <div className="space-y-2.5">
-              {[['/', 'Home'], ['/services', 'Services'], ['/about', 'About'], ['/contact', 'Contact']].map(([to, label]) => (
+              {[['/', 'Home'], ['/services', 'Services'], ['/about', 'About'], ['/pricing', 'Pricing'], ['/contact', 'Contact']].map(([to, label]) => (
                 <Link key={to} to={to} className="block text-sm text-white/50 hover:text-white transition-colors">{label}</Link>
               ))}
             </div>

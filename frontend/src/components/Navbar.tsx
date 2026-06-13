@@ -30,6 +30,7 @@ export default function Navbar() {
             <Link to="/" className="text-sm text-gray-600 hover:text-navy-700 font-medium transition-colors">Home</Link>
             <Link to="/services" className="text-sm text-gray-600 hover:text-navy-700 font-medium transition-colors">Services</Link>
             <Link to="/about" className="text-sm text-gray-600 hover:text-navy-700 font-medium transition-colors">About</Link>
+            <Link to="/pricing" className="text-sm text-gray-600 hover:text-navy-700 font-medium transition-colors">Pricing</Link>
             <Link to="/contact" className="text-sm text-gray-600 hover:text-navy-700 font-medium transition-colors">Contact</Link>
           </nav>
 
@@ -61,6 +62,7 @@ export default function Navbar() {
           <Link to="/" className="block text-sm text-gray-700 py-2 font-medium" onClick={() => setMobileOpen(false)}>Home</Link>
           <Link to="/services" className="block text-sm text-gray-700 py-2 font-medium" onClick={() => setMobileOpen(false)}>Services</Link>
           <Link to="/about" className="block text-sm text-gray-700 py-2 font-medium" onClick={() => setMobileOpen(false)}>About</Link>
+          <Link to="/pricing" className="block text-sm text-gray-700 py-2 font-medium" onClick={() => setMobileOpen(false)}>Pricing</Link>
           <Link to="/contact" className="block text-sm text-gray-700 py-2 font-medium" onClick={() => setMobileOpen(false)}>Contact</Link>
           {user ? (
             <>
