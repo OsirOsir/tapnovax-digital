@@ -80,10 +80,7 @@ export default function HomePage() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36 relative">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-8">
-              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-              <span className="text-blue-300 text-xs font-medium tracking-wide">Registered Digital Services Provider — Mombasa, Kenya</span>
-            </div>
+
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
               Your Business.<br />
               <span className="text-blue-400">Digital. Growing.</span><br />
