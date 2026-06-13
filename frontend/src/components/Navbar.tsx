@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -19,12 +19,10 @@ export default function Navbar() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-navy-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">T</span>
-            </div>
-            <span className="font-semibold text-navy-900 text-base">Tapnovax Digital</span>
+          <Link to="/" className="flex items-center">
+            <img src="/logo-dark.svg" alt="Tapnovax Digital" className="h-9 w-auto" />
           </Link>
 
           {/* Desktop nav */}

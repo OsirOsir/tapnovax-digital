@@ -53,13 +53,7 @@ export default function DashboardLayout() {
       <aside className={`fixed lg:relative z-30 h-full w-64 bg-navy-950 flex flex-col transition-transform duration-300 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-white/10">
-          <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">T</span>
-          </div>
-          <div>
-            <div className="text-white font-semibold text-sm leading-tight">Tapnovax</div>
-            <div className="text-white/40 text-xs">Digital</div>
-          </div>
+          <img src="/logo-light.svg" alt="Tapnovax Digital" className="h-8 w-auto" />
           <button className="ml-auto lg:hidden text-white/40 hover:text-white" onClick={() => setSidebarOpen(false)}>
             <X size={18} />
           </button>

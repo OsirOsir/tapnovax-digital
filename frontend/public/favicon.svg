@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
+  <title>Tapnovax Digital</title>
+  <rect width="64" height="64" rx="12" fill="#0a1628"/>
+  <!-- T crossbar -->
+  <rect x="6" y="12" width="28" height="7" fill="#ffffff"/>
+  <!-- T stem -->
+  <rect x="16" y="19" width="7" height="22" fill="#ffffff"/>
+  <!-- D vertical stroke -->
+  <rect x="38" y="12" width="7" height="30" fill="#ffffff"/>
+  <!-- D curve -->
+  <path d="M38 12 Q58 12 58 27 Q58 42 38 42" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="butt"/>
+  <!-- Blue accent slash -->
+  <polygon points="33,38 37,28 42,28 38,38" fill="#3B82F6"/>
+  <!-- Blue dot -->
+  <rect x="6" y="36" width="5" height="5" fill="#3B82F6"/>
+</svg>

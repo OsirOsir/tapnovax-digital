@@ -7,18 +7,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-          {/* Brand + About */}
+          {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">T</span>
-              </div>
-              <span className="font-semibold text-white text-base">Tapnovax Digital</span>
-            </div>
-            <p className="text-white/50 text-sm leading-relaxed max-w-sm mb-4">
+            <Link to="/" className="inline-block mb-5">
+              <img src="/logo-light.svg" alt="Tapnovax Digital" className="h-10 w-auto" />
+            </Link>
+            <p className="text-white/50 text-sm leading-relaxed max-w-sm">
               Provision of Digital Services, Online Marketing, Sales Support, Customer Onboarding, Business Promotion, and Related Technology-enabled Services.
-            </p>
-            <p className="text-white/30 text-xs">
             </p>
           </div>
 
