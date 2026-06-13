@@ -105,7 +105,7 @@ export default function ContactPage() {
                     <Mail size={16} className="text-blue-500 mt-0.5 shrink-0" />
                     <div>
                       <div className="font-medium text-gray-800">Email</div>
-                      <div>Hellenakaran@gmail.com</div>
+                      <div>info@tapnovax.online</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">

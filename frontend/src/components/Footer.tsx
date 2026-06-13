@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-white/50">
               <div className="flex items-start gap-2">
                 <Mail size={14} className="mt-0.5 shrink-0" />
-                <span>Hellenakaran@gmail.com</span>
+                <span>info@tapnovax.online</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={14} className="shrink-0" />
