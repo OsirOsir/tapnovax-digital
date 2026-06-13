@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Mail, Phone, MapPin, CheckCircle, Loader, Clock } from 'lucide-react';
 import { submitInquiry } from '../../api/inquiries';
 
 export default function ContactPage() {
@@ -135,23 +136,6 @@ export default function ContactPage() {
                   <div className="flex justify-between"><span>Monday – Friday</span><span className="font-medium text-gray-700">8am – 6pm</span></div>
                   <div className="flex justify-between"><span>Saturday</span><span className="font-medium text-gray-700">9am – 2pm</span></div>
                   <div className="flex justify-between"><span>Sunday</span><span className="text-gray-400">Closed</span></div>
-                </div>
-              </div>
-
-              <div className="card p-6">
-                <h3 className="font-semibold text-navy-900 mb-3 flex items-center gap-2">
-                </h3>
-                <div className="text-sm text-gray-500 space-y-1.5">
-                  <div className="flex justify-between">
-                  </div>
-                  <div className="flex justify-between">
-                  </div>
-                  <div className="flex justify-between">
-                  </div>
-                  <div className="flex justify-between">
-                  </div>
-                  <div className="flex justify-between">
-                  </div>
                 </div>
               </div>
 
