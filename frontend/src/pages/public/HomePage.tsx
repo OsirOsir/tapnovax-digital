@@ -120,13 +120,13 @@ export default function HomePage() {
 
           <div className="divide-y divide-slate-50">
             {services.map((s) => (
-              <Link key={s.num} to={`/services/${serviceSlug(s.title)}`}
-                className="group grid grid-cols-12 gap-6 py-6 hover:bg-slate-50 -mx-4 px-4 rounded-xl transition-all">
+              <div key={s.num} className="group relative grid grid-cols-12 gap-6 py-6 hover:bg-slate-50 -mx-4 px-4 rounded-xl transition-all">
+                <Link to={`/services/${s.title.toLowerCase().replace(/\s+/g, '-')}`} className="absolute inset-0 z-10" aria-label={s.title} />
                 <div className="col-span-1 text-xs font-mono text-slate-300 pt-1">{s.num} /</div>
                 <div className="col-span-4 font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">{s.title}</div>
                 <div className="col-span-6 text-slate-400 text-sm leading-relaxed pt-0.5">{s.desc}</div>
                 <div className="col-span-1 text-right text-slate-300 group-hover:text-blue-600 font-mono text-sm transition-colors pt-0.5">&gt;&gt;&gt;</div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
