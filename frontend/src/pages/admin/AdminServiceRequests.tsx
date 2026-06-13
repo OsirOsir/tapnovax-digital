@@ -60,7 +60,6 @@ export default function AdminServiceRequests() {
                     <td colSpan={5} className="px-6 py-4 text-sm">
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div><span className="text-gray-400">Budget:</span> <span className="text-gray-700">{r.budget_range || '-'}</span></div>
-                        <div><span className="text-gray-400">Contact:</span> <span className="text-gray-700">{r.preferred_contact_method || '-'}</span></div>
                         <div className="col-span-2"><span className="text-gray-400">Description:</span> <p className="text-gray-700 mt-1">{r.description || '-'}</p></div>
                         {r.admin_notes && <div className="col-span-2"><span className="text-gray-400">Notes:</span> <p className="text-gray-700 mt-1">{r.admin_notes}</p></div>}
                       </div>
