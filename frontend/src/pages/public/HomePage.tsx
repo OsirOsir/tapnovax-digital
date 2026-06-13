@@ -1,147 +1,151 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, CheckCircle, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
+import { useEffect, useState } from 'react';
+
+const tickerItems = ['online marketing', 'lead generation', 'sales support', 'customer onboarding', 'business promotion', 'digital growth'];
 
 const services = [
-  { num: '01', title: 'Online Marketing', desc: 'Data-backed strategies that drive targeted traffic and grow your digital presence.' },
-  { num: '02', title: 'Business Promotion', desc: 'Increase brand visibility across major digital channels in Kenya and beyond.' },
+  { num: '01', title: 'Online Marketing', desc: 'Data-backed strategies that drive targeted traffic and grow your digital presence across all major platforms.' },
+  { num: '02', title: 'Business Promotion', desc: 'Increase brand visibility and awareness across major digital channels in Kenya and beyond.' },
   { num: '03', title: 'Customer Onboarding', desc: 'Structured programs to welcome, activate, and retain new clients from day one.' },
   { num: '04', title: 'Sales Support', desc: 'Dedicated support to help your team close deals and manage leads at scale.' },
-  { num: '05', title: 'Lead Generation', desc: 'Identify, attract, and qualify high-intent prospects ready to convert.' },
-  { num: '06', title: 'Tech Support', desc: 'Technology-enabled tools to streamline operations and boost efficiency.' },
+  { num: '05', title: 'Lead Generation', desc: 'Identify, attract, and qualify high-intent prospects who are ready to convert.' },
+  { num: '06', title: 'Tech Support', desc: 'Technology-enabled tools to streamline your operations and boost business efficiency.' },
 ];
 
 const testimonials = [
-  { name: 'James Mwangi', title: 'CEO, Mwangi Traders Ltd', location: 'Nairobi', text: 'Within 45 days we saw a 3x increase in inquiries. Their team is professional, responsive, and genuinely invested in your growth.' },
-  { name: 'Amina Hassan', title: 'Founder, Aura Beauty Studio', location: 'Mombasa', text: 'Tapnovax held our hand through everything — from social pages to our first campaign. Sales have never been better.' },
-  { name: 'Peter Otieno', title: 'Director, Otieno Logistics', location: 'Kisumu', text: 'Our team went from struggling to close deals to consistently hitting targets. I highly recommend Tapnovax to any serious business owner.' },
-  { name: 'Grace Wambui', title: 'Owner, GW Properties', location: 'Thika', text: 'They built our entire online presence from scratch and we now get qualified leads every week. Very well organised.' },
-  { name: 'Samuel Kipchoge', title: 'MD, Kipchoge Agro Supplies', location: 'Eldoret', text: 'Our customer base grew by 60% in three months. Excellent communication and transparent reporting throughout.' },
-  { name: 'Faith Njeri', title: 'CEO, Njeri Events & Catering', location: 'Nakuru', text: 'Booking inquiries went from zero to dozens per month. They understand the Kenyan market and know what works here.' },
-];
-
-const stats = [
-  { val: '150+', label: 'Businesses Served' },
-  { val: '98%', label: 'Client Satisfaction' },
-  { val: '60', label: 'Days Avg. to Results' },
-  { val: '4.9', label: 'Average Rating' },
+  { name: 'James Mwangi', title: 'CEO, Mwangi Traders Ltd', location: 'Nairobi', text: 'Within 45 days we saw a 3x increase in inquiries. Professional, responsive, and genuinely invested in your growth.' },
+  { name: 'Amina Hassan', title: 'Founder, Aura Beauty Studio', location: 'Mombasa', text: 'Tapnovax held our hand through everything. From social pages to our first campaign. Sales have never been better.' },
+  { name: 'Peter Otieno', title: 'Director, Otieno Logistics', location: 'Kisumu', text: 'Our team went from struggling to close deals to consistently hitting targets. Highly recommend to any serious business owner.' },
+  { name: 'Grace Wambui', title: 'Owner, GW Properties', location: 'Thika', text: 'Built our entire online presence from scratch. We now get qualified leads every week. Very well organised.' },
+  { name: 'Samuel Kipchoge', title: 'MD, Kipchoge Agro Supplies', location: 'Eldoret', text: 'Customer base grew by 60% in three months. Excellent communication and transparent reporting throughout.' },
+  { name: 'Faith Njeri', title: 'CEO, Njeri Events & Catering', location: 'Nakuru', text: 'Booking inquiries went from zero to dozens per month. They understand the Kenyan market.' },
 ];
 
 const steps = [
-  { num: '01', title: 'Submit Inquiry', desc: 'Tell us about your business goals.' },
-  { num: '02', title: 'Consultation', desc: 'We craft a tailored service plan.' },
-  { num: '03', title: 'Onboarding', desc: 'Smooth setup with a dedicated coordinator.' },
-  { num: '04', title: 'Results', desc: 'We execute, monitor, and report.' },
+  { num: '01', title: 'Submit Inquiry', desc: 'Tell us your business goals and which services you need.' },
+  { num: '02', title: 'Consultation', desc: 'Our team crafts a tailored service plan for your business.' },
+  { num: '03', title: 'Onboarding', desc: 'Smooth setup with a dedicated account coordinator.' },
+  { num: '04', title: 'Results >>>', desc: 'We execute, monitor, and report — you stay focused on business.' },
 ];
 
 export default function HomePage() {
+  const [tick, setTick] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setTick(p => (p + 1) % tickerItems.length), 2000);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <div className="bg-white">
 
       {/* ── HERO ── */}
-      <section className="bg-navy-950 relative overflow-hidden min-h-[90vh] flex items-center">
-        {/* Subtle grid overlay */}
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
-        {/* Glow */}
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] -translate-y-1/2" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 relative w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="section-tag text-blue-400 mb-6" style={{color: '#60a5fa'}}>
-                <span className="w-4 h-px bg-blue-400 inline-block" />
-                Digital Growth Partner — Mombasa, Kenya
+      <section className="bg-white border-b border-slate-100 py-24 lg:py-36">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-7">
+              {/* Ticker */}
+              <div className="flex items-center gap-3 mb-8">
+                <span className="text-xs font-mono text-slate-400 uppercase tracking-widest">&gt;&gt;&gt; Accelerating</span>
+                <div className="overflow-hidden h-5 flex-1 max-w-[240px]">
+                  <div className="transition-transform duration-500" style={{transform: `translateY(-${tick * 100}%)`}}>
+                    {tickerItems.map((item) => (
+                      <div key={item} className="h-5 flex items-center">
+                        <span className="text-xs font-mono text-blue-600 uppercase tracking-widest">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.0] tracking-tight mb-6">
+
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-slate-900 leading-[0.95] tracking-tight mb-8">
                 Grow your<br/>
                 business<br/>
-                <span className="text-blue-400">digitally.</span>
+                <span className="text-blue-600">digitally.</span>
               </h1>
-              <p className="text-white/50 text-lg leading-relaxed mb-10 max-w-lg">
-                Tapnovax Digital helps Kenyan businesses grow online — marketing, lead generation, sales support, and onboarding that delivers real results.
+              <p className="text-slate-500 text-lg leading-relaxed max-w-lg mb-10">
+                Tapnovax Digital helps Kenyan businesses grow online through marketing, lead generation, sales support, and customer onboarding that delivers real, measurable results.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link to="/contact" className="btn-primary px-8 py-4 text-base">
-                  Start a Conversation <ArrowRight size={17} />
+                <Link to="/contact" className="btn-dark px-8 py-4 text-sm">
+                  contact us &gt;&gt;&gt;
                 </Link>
-                <Link to="/services" className="btn-outline-white px-8 py-4 text-base">
-                  Our Services
+                <Link to="/services" className="btn-outline px-8 py-4 text-sm">
+                  our services
                 </Link>
               </div>
             </div>
 
-            {/* Stats grid */}
-            <div className="hidden lg:grid grid-cols-2 gap-px bg-white/5 rounded-2xl overflow-hidden">
-              {stats.map((s) => (
-                <div key={s.label} className="bg-navy-950 p-10 hover:bg-navy-900 transition-colors">
-                  <div className="text-5xl font-bold text-white mb-2">{s.val}</div>
-                  <div className="text-white/40 text-sm tracking-wide">{s.label}</div>
-                </div>
-              ))}
+            {/* Stats */}
+            <div className="lg:col-span-5">
+              <div className="grid grid-cols-2 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-hidden">
+                {[['150+', 'Businesses Served'], ['98%', 'Client Satisfaction'], ['60', 'Days Avg. to Results'], ['4.9★', 'Average Rating']].map(([val, lab]) => (
+                  <div key={lab} className="bg-white p-8 hover:bg-slate-50 transition-colors">
+                    <div className="text-4xl font-bold text-slate-900 mb-2">{val}</div>
+                    <div className="text-xs font-mono text-slate-400 uppercase tracking-widest">{lab}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Terminal-style status box */}
+              <div className="mt-4 bg-slate-900 rounded-xl p-5 font-mono text-xs">
+                <div className="text-slate-500 mb-3">status:// active &gt;&gt;&gt;</div>
+                {['001 / client onboarding... done', '002 / campaign launched... done', '003 / leads qualified... 24 found', '004 / reporting... in progress'].map((line, i) => (
+                  <div key={i} className={`py-1 flex items-center gap-2 ${i === 3 ? 'text-blue-400' : 'text-green-400'}`}>
+                    <span className="text-slate-600">[{String(i+1).padStart(2,'0')}]</span>
+                    <span>{line}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom border line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/5" />
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-12 pb-4 border-b border-slate-100">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue-600 mb-4">
-                <span className="w-4 h-px bg-blue-600 inline-block" />
-                What We Do
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-navy-950 leading-tight">
-                Services built for<br/>real business growth
-              </h2>
+              <div className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">&gt;&gt;&gt; what we do</div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">Services</h2>
             </div>
-            <Link to="/services" className="flex items-center gap-2 text-sm font-semibold text-navy-950 hover:text-blue-600 transition-colors group shrink-0">
-              View all services
-              <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <Link to="/services" className="text-xs font-mono text-slate-400 hover:text-slate-900 transition-colors hidden sm:block">
+              view all &gt;&gt;&gt;
             </Link>
           </div>
 
-          {/* Service list — editorial numbered style */}
-          <div className="divide-y divide-slate-100">
+          <div className="divide-y divide-slate-50">
             {services.map((s) => (
-              <div key={s.num} className="group grid grid-cols-12 gap-6 py-7 hover:bg-slate-50 -mx-4 px-4 rounded-xl transition-colors cursor-default">
-                <div className="col-span-1 text-xs font-mono text-slate-300 pt-1">{s.num}</div>
-                <div className="col-span-4 font-semibold text-navy-950 text-lg group-hover:text-blue-600 transition-colors">{s.title}</div>
-                <div className="col-span-6 text-slate-500 text-sm leading-relaxed">{s.desc}</div>
-                <div className="col-span-1 flex justify-end items-start pt-1">
-                  <ArrowUpRight size={16} className="text-slate-300 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                </div>
+              <div key={s.num} className="group grid grid-cols-12 gap-6 py-6 hover:bg-slate-50 -mx-4 px-4 rounded-xl transition-all cursor-default">
+                <div className="col-span-1 text-xs font-mono text-slate-300 pt-1">{s.num} /</div>
+                <div className="col-span-4 font-bold text-slate-900 text-lg group-hover:text-blue-600 transition-colors">{s.title}</div>
+                <div className="col-span-6 text-slate-400 text-sm leading-relaxed pt-0.5">{s.desc}</div>
+                <div className="col-span-1 text-right text-slate-300 group-hover:text-blue-600 font-mono text-sm transition-colors pt-0.5">&gt;&gt;&gt;</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
-      <section className="py-28 bg-navy-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px'}} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="mb-16">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue-400 mb-4">
-              <span className="w-4 h-px bg-blue-400 inline-block" />
-              The Process
+      {/* ── PROCESS ── */}
+      <section className="py-24 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-12 pb-4 border-b border-white/10">
+            <div>
+              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-2">&gt;&gt;&gt; the process</div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white">How we work</h2>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Simple. Structured.<br/>Effective.
-            </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-xl overflow-hidden">
             {steps.map((s) => (
-              <div key={s.num} className="bg-navy-950 p-8 hover:bg-navy-900 transition-colors">
-                <div className="text-6xl font-bold text-white/5 mb-6 font-mono">{s.num}</div>
-                <div className="w-8 h-px bg-blue-500 mb-5" />
-                <h3 className="font-bold text-white text-lg mb-3">{s.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{s.desc}</p>
+              <div key={s.num} className="bg-slate-900 p-8 hover:bg-slate-800 transition-colors">
+                <div className="text-xs font-mono text-slate-600 mb-6">{s.num} /</div>
+                <div className="w-6 h-px bg-blue-500 mb-5" />
+                <h3 className="font-bold text-white text-base mb-3">{s.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed font-mono">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -149,34 +153,29 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-28 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-12 pb-4 border-b border-slate-100">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue-600 mb-4">
-                <span className="w-4 h-px bg-blue-600 inline-block" />
-                Client Stories
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-navy-950 leading-tight">
-                What our clients say
-              </h2>
+              <div className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">&gt;&gt;&gt; client stories</div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">Results</h2>
             </div>
-            <div className="flex items-center gap-1.5 shrink-0">
-              {[...Array(5)].map((_, i) => <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />)}
-              <span className="text-sm font-semibold text-slate-700 ml-2">4.9 average</span>
+            <div className="hidden sm:flex items-center gap-1">
+              {[...Array(5)].map((_, i) => <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />)}
+              <span className="text-xs font-mono text-slate-400 ml-2">4.9 avg</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {testimonials.map((t, i) => (
-              <div key={t.name} className={`bg-white rounded-2xl p-7 border border-slate-100 flex flex-col gap-5 hover:shadow-lg hover:shadow-slate-100 transition-all duration-300 ${i === 0 ? 'lg:col-span-1 border-blue-100 bg-blue-50' : ''}`}>
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, j) => <Star key={j} size={12} className="text-yellow-400 fill-yellow-400" />)}
+              <div key={t.name} className={`p-7 rounded-xl border transition-all hover:shadow-md ${i === 0 ? 'bg-blue-600 border-blue-600' : 'bg-white border-slate-100 hover:border-slate-200'}`}>
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, j) => <Star key={j} size={12} className={i === 0 ? 'text-white fill-white' : 'text-yellow-400 fill-yellow-400'} />)}
                 </div>
-                <p className="text-slate-600 text-sm leading-relaxed flex-1">"{t.text}"</p>
-                <div className="border-t border-slate-100 pt-4">
-                  <div className="font-semibold text-navy-950 text-sm">{t.name}</div>
-                  <div className="text-slate-400 text-xs mt-0.5">{t.title} · {t.location}</div>
+                <p className={`text-sm leading-relaxed flex-1 mb-5 ${i === 0 ? 'text-white/90' : 'text-slate-500'}`}>"{t.text}"</p>
+                <div className={`border-t pt-4 ${i === 0 ? 'border-white/20' : 'border-slate-100'}`}>
+                  <div className={`font-bold text-sm ${i === 0 ? 'text-white' : 'text-slate-900'}`}>{t.name}</div>
+                  <div className={`text-xs font-mono mt-0.5 ${i === 0 ? 'text-white/50' : 'text-slate-400'}`}>{t.title} · {t.location}</div>
                 </div>
               </div>
             ))}
@@ -184,83 +183,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHY US ── */}
-      <section className="py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue-600 mb-4">
-                <span className="w-4 h-px bg-blue-600 inline-block" />
-                Why Choose Us
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-navy-950 leading-tight mb-6">
-                Built around your<br/>business goals
-              </h2>
-              <p className="text-slate-500 leading-relaxed mb-10 text-base">
-                We combine digital expertise with a structured service model to ensure every client sees measurable outcomes. From first inquiry to active campaign management, we stay fully engaged.
-              </p>
-              <div className="space-y-4 mb-10">
-                {['Dedicated account management', 'Transparent progress reporting', 'Flexible engagement models', 'Results-focused approach', 'Scalable solutions for growing businesses', 'Kenya market expertise'].map((r) => (
-                  <div key={r} className="flex items-center gap-3 text-sm text-slate-700">
-                    <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                      <CheckCircle size={12} className="text-blue-600" />
-                    </div>
-                    {r}
-                  </div>
-                ))}
-              </div>
-              <Link to="/register" className="btn-dark px-8 py-4 text-base">
-                Get Started Today <ArrowRight size={17} />
-              </Link>
-            </div>
-
-            {/* Dark panel */}
-            <div className="bg-navy-950 rounded-2xl p-10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/10 rounded-full blur-3xl" />
-              <div className="grid grid-cols-2 gap-8 mb-10 relative">
-                {[['150+', 'Clients Served'], ['98%', 'Satisfaction Rate'], ['60 days', 'Avg. Results'], ['4.9★', 'Rating']].map(([val, lab]) => (
-                  <div key={lab}>
-                    <div className="text-3xl font-bold text-white mb-1">{val}</div>
-                    <div className="text-white/30 text-xs">{lab}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="border-t border-white/10 pt-8 space-y-6 relative">
-                {testimonials.slice(0,2).map((t) => (
-                  <div key={t.name} className="group">
-                    <div className="flex gap-0.5 mb-2">
-                      {[...Array(5)].map((_, i) => <Star key={i} size={10} className="text-yellow-400 fill-yellow-400" />)}
-                    </div>
-                    <p className="text-white/50 text-sm italic leading-relaxed">"{t.text.slice(0,90)}…"</p>
-                    <div className="text-white/25 text-xs mt-2">— {t.name}, {t.location}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA ── */}
-      <section className="py-24 bg-blue-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10"
+      <section className="py-24 bg-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5"
           style={{backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px'}} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
-              Ready to grow<br/>your business?
-            </h2>
-            <p className="text-blue-100/70 mb-10 text-lg leading-relaxed max-w-xl">
-              Join hundreds of Kenyan businesses using Tapnovax Digital to build their online presence, attract customers, and grow revenue.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/register" className="bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-base inline-flex items-center gap-2">
-                Create Free Account <ArrowRight size={17} />
-              </Link>
-              <Link to="/contact" className="btn-outline-white px-8 py-4 text-base">
-                Talk to Us First
-              </Link>
-            </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+          <div className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-4">&gt;&gt;&gt; get started</div>
+          <h2 className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
+            Accelerating<br/>
+            <span className="text-blue-500">business growth.</span>
+          </h2>
+          <p className="text-slate-500 text-lg mb-10 max-w-xl font-mono leading-relaxed">
+            Join hundreds of Kenyan businesses using Tapnovax Digital to build their online presence and grow revenue.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contact" className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-lg transition-colors text-sm inline-flex items-center gap-2">
+              contact us &gt;&gt;&gt;
+            </Link>
+            <Link to="/register" className="border border-white/20 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-sm">
+              create account
+            </Link>
+          </div>
+
+          {/* Status ticker */}
+          <div className="mt-16 flex items-center gap-6 text-xs font-mono text-slate-600">
+            <span>status://</span>
+            <span className="text-green-500">approving... &gt;&gt;&gt;</span>
+            <span className="text-blue-500">pending... &gt;&gt;&gt;</span>
+            <span className="text-yellow-500">request approved... &gt;&gt;&gt;</span>
           </div>
         </div>
       </section>
