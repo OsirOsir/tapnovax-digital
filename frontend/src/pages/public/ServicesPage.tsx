@@ -56,7 +56,8 @@ export default function ServicesPage() {
           ) : (
             <div className="divide-y divide-slate-50">
               {filtered.map((s, i) => (
-                <div key={s.id} className="group grid grid-cols-12 gap-6 py-7 hover:bg-slate-50 -mx-4 px-4 rounded-xl transition-all">
+                <Link key={s.id} to={`/services/${s.slug}`}
+                  className="group grid grid-cols-12 gap-6 py-7 hover:bg-slate-50 -mx-4 px-4 rounded-xl transition-all">
                   <div className="col-span-1 text-xs font-mono text-slate-300 pt-1">{String(i+1).padStart(2,'0')} /</div>
                   <div className="col-span-3">
                     <div className="font-bold text-slate-900 text-lg mb-2 group-hover:text-blue-600 transition-colors">{s.name}</div>
@@ -73,7 +74,7 @@ export default function ServicesPage() {
                   <div className="col-span-1 flex justify-end items-start pt-1">
                     <span className="text-slate-200 group-hover:text-blue-600 font-mono text-sm transition-colors">&gt;&gt;&gt;</span>
                   </div>
-                </div>
+                </Link>
               ))}
               {filtered.length === 0 && (
                 <div className="text-center py-20 font-mono text-slate-400 text-sm">no results found &gt;&gt;&gt;</div>
