@@ -2,7 +2,14 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { register as registerApi } from '../../api/auth';
-import { Loader } from 'lucide-react';
+import { Loader, CheckCircle } from 'lucide-react';
+
+const perks = [
+  'Submit and track service requests',
+  'Dedicated account coordinator',
+  'Real-time progress updates',
+  'Direct messaging with our team',
+];
 
 export default function RegisterPage() {
   const [form, setForm] = useState({ full_name: '', email: '', phone: '', password: '', business_name: '' });
@@ -32,31 +39,43 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      <div className="hidden lg:flex flex-1 bg-navy-950 items-center justify-center p-12">
-        <div className="max-w-md text-white">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center">
-              <span className="font-bold text-lg">T</span>
-            </div>
-            <span className="text-xl font-semibold">Tapnovax Digital</span>
+      {/* Brand panel */}
+      <div className="hidden lg:flex flex-col flex-1 bg-navy-950 justify-between p-12">
+        <Link to="/">
+          <img src="/logo-light.svg" alt="Tapnovax Digital" className="h-9 w-auto" />
+        </Link>
+        <div className="max-w-md">
+          <h2 className="text-4xl font-bold text-white leading-tight mb-4">
+            Start growing<br />your business<br />
+            <span className="text-blue-400">the digital way.</span>
+          </h2>
+          <p className="text-white/40 text-sm leading-relaxed mb-10">
+            Create an account to access Tapnovax Digital services and work directly with our team.
+          </p>
+          <div className="space-y-3">
+            {perks.map((p) => (
+              <div key={p} className="flex items-center gap-3 text-sm text-white/60">
+                <CheckCircle size={15} className="text-blue-400 shrink-0" />
+                {p}
+              </div>
+            ))}
           </div>
-          <h2 className="text-4xl font-bold leading-tight mb-4">Start growing<br />your business</h2>
-          <p className="text-white/50">Create an account to request services, track progress, and work directly with our digital team.</p>
         </div>
+        <div className="text-white/20 text-xs">© {new Date().getFullYear()} Tapnovax Digital</div>
       </div>
 
+      {/* Form panel */}
       <div className="flex-1 flex items-center justify-center p-8">
         <div className="w-full max-w-sm">
-          <div className="lg:hidden flex items-center gap-2.5 mb-8">
-            <div className="w-8 h-8 bg-navy-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">T</span>
-            </div>
-            <span className="font-semibold text-navy-900">Tapnovax Digital</span>
+          <div className="lg:hidden mb-8">
+            <Link to="/">
+              <img src="/logo-dark.svg" alt="Tapnovax Digital" className="h-8 w-auto" />
+            </Link>
           </div>
-          <h1 className="text-2xl font-bold text-navy-900 mb-1">Create account</h1>
-          <p className="text-gray-500 text-sm mb-8">Get started for free today</p>
+          <h1 className="text-2xl font-bold text-navy-900 mb-1">Create your account</h1>
+          <p className="text-gray-400 text-sm mb-8">Get started — it only takes a minute</p>
 
-          {error && <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">{error}</div>}
+          {error && <div className="mb-5 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">{error}</div>}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -84,9 +103,9 @@ export default function RegisterPage() {
             </button>
           </form>
 
-          <p className="text-center text-sm text-gray-500 mt-6">
+          <p className="text-center text-sm text-gray-400 mt-6">
             Already have an account?{' '}
-            <Link to="/login" className="text-navy-700 font-medium hover:underline">Sign in</Link>
+            <Link to="/login" className="text-blue-600 font-medium hover:underline">Sign in</Link>
           </p>
         </div>
       </div>
